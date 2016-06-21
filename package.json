@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "https://www.freecodecamp.com/challenges/timestamp-microservice",
   "engines": {
-    "node": "5.9.1"
+    "node": "6.2.0"
   },
   "main": "index.js",
   "scripts": {
