@@ -5,7 +5,9 @@ const express = require('express')
       'September', 'October', 'November', 'December'
     ];
 
-app.use(express.static('public'));
+app.set('port', (process.env.PORT || 5000));
+
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
   res.render('index', (err) => {
@@ -19,10 +21,8 @@ app.get('/:input', (req, res) => {
   res.json(json);
 });
 
-var port = app.get('port') || 8000;
-
-app.listen(port, () => {
-  console.log('Listening on port ' + port);
+app.listen(app.get('port'), () => {
+  console.log('Listening on port ' + app.get('port'));
 });
 
 
